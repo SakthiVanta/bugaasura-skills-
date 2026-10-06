@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "bugasura-skills",
+  "description": "Claude Code skills that analyse and fix Bugasura tickets straight from the ticket number or link, using the official Bugasura MCP server.",
+  "owner": {
+    "name": "bugasura-skills contributors"
+  },
+  "plugins": [
+    {
+      "name": "bugasura",
+      "source": "./plugins/bugasura",
+      "description": "Analyse and fix Bugasura bugs from a ticket number or URL. Bundles the Bugasura MCP server (https://mcp.bugasura.io/mcp) and two skills: bugasura-bug-analyse and bugasura-bug-fix.",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": ["bugasura", "bug-tracking", "mcp", "debugging", "triage", "qa"]
+    }
+  ]
+}

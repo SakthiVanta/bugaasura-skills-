@@ -1,0 +1,11 @@
+{
+  "teamId": 12345,
+  "projectId": 67890,
+  "prefix": "BUG",
+  "baseBranch": "main",
+  "branchTemplate": "fix/<slug>",
+  "repos": [
+    { "name": "web", "path": "." },
+    { "name": "api", "path": "../my-api" }
+  ]
+}

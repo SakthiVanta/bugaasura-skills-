@@ -1,0 +1,8 @@
+{
+  "name": "bugasura",
+  "version": "1.0.0",
+  "description": "Analyse and fix Bugasura bugs from a ticket number or URL. Bundles the Bugasura MCP server and two skills: bugasura-bug-analyse and bugasura-bug-fix.",
+  "keywords": ["bugasura", "bug-tracking", "mcp", "debugging", "triage", "qa"],
+  "author": { "name": "bugasura-skills contributors" },
+  "license": "MIT"
+}
