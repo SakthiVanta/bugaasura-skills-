@@ -11,35 +11,26 @@ Claude Code skills that turn a Bugasura ticket number or link into an answer or 
 
 ## Install
 
-**Plugin (recommended)** - installs both skills and registers the MCP server:
+Choose where it should live:
+
+| | Global (all your projects) | Project-level (this repo only, shareable) |
+|---|---|---|
+| **Plugin** | `claude plugin install bugasura@bugasura-skills --scope user` | `claude plugin install bugasura@bugasura-skills --scope project` |
+| **Manual** | `scripts/install.sh --scope global` | `scripts/install.sh --scope project` |
+
+First add the marketplace once:
 
 ```
 /plugin marketplace add SakthiVanta/bugaasura-skills-
-/plugin install bugasura@bugasura-skills
 ```
 
-Then run `/mcp`, pick **bugasura**, and sign in to Bugasura in the browser. That is the whole setup.
+Then install with one of the commands above, or just use `/plugin install bugasura@bugasura-skills` inside Claude Code and pick a scope in the menu. A third plugin scope, `local`, installs for you only in the current repo without committing anything.
 
-**MCP only** (you already have the skills, or want the tools without them):
+Finally run `/mcp`, pick **bugasura**, and sign in to Bugasura in the browser. That is the whole setup.
 
-```
-claude mcp add --transport http bugasura https://mcp.bugasura.io/mcp
-```
+**Let Claude do it:** tell Claude "install the skills from SakthiVanta/bugaasura-skills-". It follows [INSTALL.md](INSTALL.md) and will ask whether you want a global or project-level install before doing anything.
 
-then `/mcp` and sign in.
-
-**Manual skills install** (no plugin system):
-
-```
-git clone https://github.com/SakthiVanta/bugaasura-skills-
-cp -r bugaasura-skills-/plugins/bugasura/skills/* ~/.claude/skills/        # macOS / Linux
-# Windows PowerShell: Copy-Item -Recurse bugaasura-skills-\plugins\bugasura\skills\* $HOME\.claude\skills\
-claude mcp add --transport http bugasura https://mcp.bugasura.io/mcp
-```
-
-Or run `scripts/install.sh` / `scripts/install.ps1`, which do the same.
-
-> Replace `SakthiVanta/bugaasura-skills-` with the repository's actual `owner/name` if you forked or renamed it.
+More options (MCP server only, Windows PowerShell, uninstall): see [INSTALL.md](INSTALL.md).
 
 ## Use
 
@@ -94,7 +85,8 @@ plugins/bugasura/
   skills/bugasura-bug-fix/SKILL.md
 examples/.bugasura.json                    sample project config
 docs/                                      configuration + troubleshooting
-scripts/                                   manual install helpers
+scripts/                                   manual install helpers (ask global vs project)
+INSTALL.md                                 install guide, also read by Claude when asked to install
 ```
 
 ## Troubleshooting
